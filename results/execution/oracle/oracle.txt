@@ -1,0 +1,4 @@
+t1_skin: 100.000% within 2, 100.000% within 8
+t2_astronaut: 99.631% within 2, 100.000% within 8
+t3_coffee: 99.569% within 2, 100.000% within 8
+t4_chart: 99.997% within 2, 100.000% within 8

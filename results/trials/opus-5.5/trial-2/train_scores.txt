@@ -1,0 +1,4 @@
+train t1_skin         93.102% within 2   98.809% within 8    0.7 s
+train t2_astronaut    82.508% within 2   96.708% within 8    0.6 s
+train t3_coffee       82.460% within 2   97.788% within 8    0.5 s
+train t4_chart        92.610% within 2   98.301% within 8    0.6 s

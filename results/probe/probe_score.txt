@@ -1,0 +1,9 @@
+train  t1_skin          95.884%  99.588%   46.7dB  pass
+train  t2_astronaut     92.651%  99.329%   45.2dB  FAIL
+train  t3_coffee        96.349%  99.842%   47.9dB  pass
+train  t4_chart         94.614%  98.709%   45.4dB  FAIL
+hidden h1_hubble        90.941%  99.723%   46.0dB  FAIL
+hidden h2_saturated     66.144%  80.814%   22.4dB  FAIL
+hidden h3_motorcycle    87.883%  98.755%   42.9dB  FAIL
+hidden h4_texture       84.899%  96.951%   40.9dB  FAIL
+PROBE: FAILED on at least one hidden photo

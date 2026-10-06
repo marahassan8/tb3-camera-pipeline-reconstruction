@@ -1,0 +1,21 @@
+pass mark: >= 95.0% within 2 and >= 99.5% within 8 on every hidden photo
+
+control                            min w2   min w8  verdict
+reference                         100.00%  100.00%  pass
+bilinear demosaic                  18.02%   49.71%  FAIL
+no highlight blend                 79.24%   82.06%  FAIL
+no local tone mapping               1.13%    3.70%  FAIL
+no sharpening                      60.53%   76.70%  FAIL
+no WB tweak                        23.40%   82.95%  FAIL
+identity colour matrix             10.53%   37.97%  FAIL
+CCM off-diagonals x1.05            80.39%   91.56%  FAIL
+gain 1.6 -> 1.62                  100.00%  100.00%  pass
+white 4.0 -> 4.2                  100.00%  100.00%  pass
+LTM radius 8 -> 7                 100.00%  100.00%  pass
+LTM eps 0.04 -> 0.05              100.00%  100.00%  pass
+LTM compress 0.70 -> 0.72          95.02%  100.00%  pass
+hl_start 0.80 -> 0.75              84.44%   88.73%  FAIL
+sharp amount 0.6 -> 0.55           96.82%  100.00%  pass
+sharp sigma 1.0 -> 1.1             99.29%  100.00%  pass
+sharp threshold 0.01 -> 0.015     100.00%  100.00%  pass
+WB tweak R 1.03 -> 1.02            89.84%   98.43%  FAIL

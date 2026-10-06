@@ -1,0 +1,91 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0
+cachedir: /tmp/pytest-cache
+rootdir: /tests
+plugins: json-ctrf-0.5.2
+collected 6 items
+
+tests/test_outputs.py F.FFFF                                             [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_pipeline_exists _____________________________
+
+    def test_pipeline_exists():
+        """The deliverable is /app/camera/pipeline.py."""
+>       assert os.path.isfile(PIPELINE), "missing /app/camera/pipeline.py"
+E       AssertionError: missing /app/camera/pipeline.py
+E       assert False
+E        +  where False = <function isfile at 0xf1d9602fab60>('/app/camera/pipeline.py')
+E        +    where <function isfile at 0xf1d9602fab60> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_outputs.py:79: AssertionError
+_________________ test_hidden_photo_matches_camera[h1_hubble] __________________
+
+name = 'h1_hubble'
+
+    @pytest.mark.parametrize("name", PHOTOS)
+    def test_hidden_photo_matches_camera(name):
+        """On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8."""
+>       assert os.path.isfile(PIPELINE), "missing /app/camera/pipeline.py"
+E       AssertionError: missing /app/camera/pipeline.py
+E       assert False
+E        +  where False = <function isfile at 0xf1d9602fab60>('/app/camera/pipeline.py')
+E        +    where <function isfile at 0xf1d9602fab60> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_outputs.py:93: AssertionError
+________________ test_hidden_photo_matches_camera[h2_saturated] ________________
+
+name = 'h2_saturated'
+
+    @pytest.mark.parametrize("name", PHOTOS)
+    def test_hidden_photo_matches_camera(name):
+        """On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8."""
+>       assert os.path.isfile(PIPELINE), "missing /app/camera/pipeline.py"
+E       AssertionError: missing /app/camera/pipeline.py
+E       assert False
+E        +  where False = <function isfile at 0xf1d9602fab60>('/app/camera/pipeline.py')
+E        +    where <function isfile at 0xf1d9602fab60> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_outputs.py:93: AssertionError
+_______________ test_hidden_photo_matches_camera[h3_motorcycle] ________________
+
+name = 'h3_motorcycle'
+
+    @pytest.mark.parametrize("name", PHOTOS)
+    def test_hidden_photo_matches_camera(name):
+        """On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8."""
+>       assert os.path.isfile(PIPELINE), "missing /app/camera/pipeline.py"
+E       AssertionError: missing /app/camera/pipeline.py
+E       assert False
+E        +  where False = <function isfile at 0xf1d9602fab60>('/app/camera/pipeline.py')
+E        +    where <function isfile at 0xf1d9602fab60> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_outputs.py:93: AssertionError
+_________________ test_hidden_photo_matches_camera[h4_texture] _________________
+
+name = 'h4_texture'
+
+    @pytest.mark.parametrize("name", PHOTOS)
+    def test_hidden_photo_matches_camera(name):
+        """On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8."""
+>       assert os.path.isfile(PIPELINE), "missing /app/camera/pipeline.py"
+E       AssertionError: missing /app/camera/pipeline.py
+E       assert False
+E        +  where False = <function isfile at 0xf1d9602fab60>('/app/camera/pipeline.py')
+E        +    where <function isfile at 0xf1d9602fab60> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_outputs.py:93: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_outputs.py::test_hidden_photo_set_is_complete
+FAILED tests/test_outputs.py::test_pipeline_exists - AssertionError: missing ...
+FAILED tests/test_outputs.py::test_hidden_photo_matches_camera[h1_hubble] - A...
+FAILED tests/test_outputs.py::test_hidden_photo_matches_camera[h2_saturated]
+FAILED tests/test_outputs.py::test_hidden_photo_matches_camera[h3_motorcycle]
+FAILED tests/test_outputs.py::test_hidden_photo_matches_camera[h4_texture] - ...
+========================= 5 failed, 1 passed in 0.15s ==========================

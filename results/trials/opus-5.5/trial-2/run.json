@@ -1,0 +1,29 @@
+{
+  "trial": 2,
+  "agent": "Claude Code 2.1.289 via Harbor 0.23.1 (agent 'claude-code', Docker environment)",
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "max (Harbor agent kwarg reasoning_effort=max)",
+  "environment": "Harbor Docker task container; 2 CPUs, 4096 MB memory; separate verifier",
+  "task_turn": {
+    "started_at": "2026-10-05T21:55:26.27Z",
+    "ended_at": "2026-10-06T00:11:26.89Z",
+    "duration_sec": 8160.4,
+    "agent_timeout_sec": 10800,
+    "hit_timeout": false,
+    "interrupted": false,
+    "num_turns": 192,
+    "tokens": {"input": 368, "cache_write": 519600, "cache_read": 64458598, "output": 367839, "thinking": 243522},
+    "cost_usd": 24.4262
+  },
+  "submission_sha256": {
+    "pipeline.py": "57415d679a801f9ffe643ffe67281d6b689b80415aabaa6454307335bafa3fad",
+    "params.npz": "396c63db8951f24ba3a640b7b3aed2ae799953f196292e1a03527d628b1f5e42"
+  },
+  "verifier": {
+    "reward": 0,
+    "hidden_within_2_pct": {"h1_hubble": 83.691, "h2_saturated": 69.023, "h3_motorcycle": 77.155, "h4_texture": 71.572},
+    "hidden_within_8_pct": {"h1_hubble": 97.803, "h2_saturated": 80.545, "h3_motorcycle": 94.708, "h4_texture": 92.137}
+  },
+  "train_within_2_pct": {"t1_skin": 93.102, "t2_astronaut": 82.508, "t3_coffee": 82.460, "t4_chart": 92.610},
+  "train_within_8_pct": {"t1_skin": 98.809, "t2_astronaut": 96.708, "t3_coffee": 97.788, "t4_chart": 98.301}
+}

@@ -1,0 +1,110 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-10-02T23:26:46.280271+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "9.1.1"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 1,
+            "failed": 5,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1790983606134,
+            "stop": 1790983606279
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_pipeline_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 13,
+                "start": 1790983606181,
+                "stop": 1790983606194,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_pipeline_exists():\n        \"\"\"The deliverable is /app/camera/pipeline.py.\"\"\"\n>       assert os.path.isfile(PIPELINE), \"missing /app/camera/pipeline.py\"\nE       AssertionError: missing /app/camera/pipeline.py\nE       assert False\nE        +  where False = <function isfile at 0xf1d9602fab60>('/app/camera/pipeline.py')\nE        +    where <function isfile at 0xf1d9602fab60> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_outputs.py:79: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_hidden_photo_set_is_complete",
+                "status": "passed",
+                "duration": 1,
+                "start": 1790983606194,
+                "stop": 1790983606195,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_hidden_photo_matches_camera",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 75,
+                "start": 1790983606196,
+                "stop": 1790983606271,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "tags": [
+                    "parametrize::name::['h1_hubble', 'h2_saturated', 'h3_motorcycle', 'h4_texture']"
+                ],
+                "trace": "name = 'h1_hubble'\n\n    @pytest.mark.parametrize(\"name\", PHOTOS)\n    def test_hidden_photo_matches_camera(name):\n        \"\"\"On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8.\"\"\"\n>       assert os.path.isfile(PIPELINE), \"missing /app/camera/pipeline.py\"\nE       AssertionError: missing /app/camera/pipeline.py\nE       assert False\nE        +  where False = <function isfile at 0xf1d9602fab60>('/app/camera/pipeline.py')\nE        +    where <function isfile at 0xf1d9602fab60> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_outputs.py:93: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_hidden_photo_matches_camera",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 3,
+                "start": 1790983606271,
+                "stop": 1790983606274,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "tags": [
+                    "parametrize::name::['h1_hubble', 'h2_saturated', 'h3_motorcycle', 'h4_texture']"
+                ],
+                "trace": "name = 'h2_saturated'\n\n    @pytest.mark.parametrize(\"name\", PHOTOS)\n    def test_hidden_photo_matches_camera(name):\n        \"\"\"On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8.\"\"\"\n>       assert os.path.isfile(PIPELINE), \"missing /app/camera/pipeline.py\"\nE       AssertionError: missing /app/camera/pipeline.py\nE       assert False\nE        +  where False = <function isfile at 0xf1d9602fab60>('/app/camera/pipeline.py')\nE        +    where <function isfile at 0xf1d9602fab60> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_outputs.py:93: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_hidden_photo_matches_camera",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 3,
+                "start": 1790983606274,
+                "stop": 1790983606277,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "tags": [
+                    "parametrize::name::['h1_hubble', 'h2_saturated', 'h3_motorcycle', 'h4_texture']"
+                ],
+                "trace": "name = 'h3_motorcycle'\n\n    @pytest.mark.parametrize(\"name\", PHOTOS)\n    def test_hidden_photo_matches_camera(name):\n        \"\"\"On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8.\"\"\"\n>       assert os.path.isfile(PIPELINE), \"missing /app/camera/pipeline.py\"\nE       AssertionError: missing /app/camera/pipeline.py\nE       assert False\nE        +  where False = <function isfile at 0xf1d9602fab60>('/app/camera/pipeline.py')\nE        +    where <function isfile at 0xf1d9602fab60> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_outputs.py:93: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_hidden_photo_matches_camera",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 2,
+                "start": 1790983606277,
+                "stop": 1790983606279,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "tags": [
+                    "parametrize::name::['h1_hubble', 'h2_saturated', 'h3_motorcycle', 'h4_texture']"
+                ],
+                "trace": "name = 'h4_texture'\n\n    @pytest.mark.parametrize(\"name\", PHOTOS)\n    def test_hidden_photo_matches_camera(name):\n        \"\"\"On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8.\"\"\"\n>       assert os.path.isfile(PIPELINE), \"missing /app/camera/pipeline.py\"\nE       AssertionError: missing /app/camera/pipeline.py\nE       assert False\nE        +  where False = <function isfile at 0xf1d9602fab60>('/app/camera/pipeline.py')\nE        +    where <function isfile at 0xf1d9602fab60> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_outputs.py:93: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

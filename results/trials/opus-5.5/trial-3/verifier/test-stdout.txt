@@ -1,0 +1,115 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0
+cachedir: /tmp/pytest-cache
+rootdir: /tests
+plugins: json-ctrf-0.5.2
+collected 6 items
+
+tests/test_outputs.py ..FFFF                                             [100%]
+
+=================================== FAILURES ===================================
+_________________ test_hidden_photo_matches_camera[h1_hubble] __________________
+
+name = 'h1_hubble'
+
+    @pytest.mark.parametrize("name", PHOTOS)
+    def test_hidden_photo_matches_camera(name):
+        """On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8."""
+        assert os.path.isfile(PIPELINE), "missing /app/camera/pipeline.py"
+        pred, _ = run_pipeline(name)
+        truth = np.asarray(Image.open(os.path.join(HIDDEN, f"{name}.out.png")).convert("RGB"))
+        assert pred.shape == truth.shape, f"{name}: output is {pred.shape}, the camera's image is {truth.shape}"
+        d = np.abs(pred.astype(int) - truth.astype(int)).max(-1)[BORDER:-BORDER, BORDER:-BORDER]
+        w2, w8 = float(np.mean(d <= 2)), float(np.mean(d <= 8))
+        print(f"{name}: {w2:.3%} within 2, {w8:.3%} within 8")
+>       assert w2 >= WITHIN_2 and w8 >= WITHIN_8, (
+            f"{name}: {w2:.3%} of pixels within 2 levels (need {WITHIN_2:.1%}), "
+            f"{w8:.3%} within 8 levels (need {WITHIN_8:.1%})"
+        )
+E       AssertionError: h1_hubble: 93.862% of pixels within 2 levels (need 95.0%), 99.764% within 8 levels (need 99.5%)
+E       assert (0.9386159769823136 >= 0.95)
+
+tests/test_outputs.py:100: AssertionError
+----------------------------- Captured stdout call -----------------------------
+h1_hubble: 93.862% within 2, 99.764% within 8
+________________ test_hidden_photo_matches_camera[h2_saturated] ________________
+
+name = 'h2_saturated'
+
+    @pytest.mark.parametrize("name", PHOTOS)
+    def test_hidden_photo_matches_camera(name):
+        """On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8."""
+        assert os.path.isfile(PIPELINE), "missing /app/camera/pipeline.py"
+        pred, _ = run_pipeline(name)
+        truth = np.asarray(Image.open(os.path.join(HIDDEN, f"{name}.out.png")).convert("RGB"))
+        assert pred.shape == truth.shape, f"{name}: output is {pred.shape}, the camera's image is {truth.shape}"
+        d = np.abs(pred.astype(int) - truth.astype(int)).max(-1)[BORDER:-BORDER, BORDER:-BORDER]
+        w2, w8 = float(np.mean(d <= 2)), float(np.mean(d <= 8))
+        print(f"{name}: {w2:.3%} within 2, {w8:.3%} within 8")
+>       assert w2 >= WITHIN_2 and w8 >= WITHIN_8, (
+            f"{name}: {w2:.3%} of pixels within 2 levels (need {WITHIN_2:.1%}), "
+            f"{w8:.3%} within 8 levels (need {WITHIN_8:.1%})"
+        )
+E       AssertionError: h2_saturated: 75.010% of pixels within 2 levels (need 95.0%), 87.830% within 8 levels (need 99.5%)
+E       assert (0.7500973318106312 >= 0.95)
+
+tests/test_outputs.py:100: AssertionError
+----------------------------- Captured stdout call -----------------------------
+h2_saturated: 75.010% within 2, 87.830% within 8
+_______________ test_hidden_photo_matches_camera[h3_motorcycle] ________________
+
+name = 'h3_motorcycle'
+
+    @pytest.mark.parametrize("name", PHOTOS)
+    def test_hidden_photo_matches_camera(name):
+        """On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8."""
+        assert os.path.isfile(PIPELINE), "missing /app/camera/pipeline.py"
+        pred, _ = run_pipeline(name)
+        truth = np.asarray(Image.open(os.path.join(HIDDEN, f"{name}.out.png")).convert("RGB"))
+        assert pred.shape == truth.shape, f"{name}: output is {pred.shape}, the camera's image is {truth.shape}"
+        d = np.abs(pred.astype(int) - truth.astype(int)).max(-1)[BORDER:-BORDER, BORDER:-BORDER]
+        w2, w8 = float(np.mean(d <= 2)), float(np.mean(d <= 8))
+        print(f"{name}: {w2:.3%} within 2, {w8:.3%} within 8")
+>       assert w2 >= WITHIN_2 and w8 >= WITHIN_8, (
+            f"{name}: {w2:.3%} of pixels within 2 levels (need {WITHIN_2:.1%}), "
+            f"{w8:.3%} within 8 levels (need {WITHIN_8:.1%})"
+        )
+E       AssertionError: h3_motorcycle: 92.655% of pixels within 2 levels (need 95.0%), 98.918% within 8 levels (need 99.5%)
+E       assert (0.926547636293399 >= 0.95)
+
+tests/test_outputs.py:100: AssertionError
+----------------------------- Captured stdout call -----------------------------
+h3_motorcycle: 92.655% within 2, 98.918% within 8
+_________________ test_hidden_photo_matches_camera[h4_texture] _________________
+
+name = 'h4_texture'
+
+    @pytest.mark.parametrize("name", PHOTOS)
+    def test_hidden_photo_matches_camera(name):
+        """On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8."""
+        assert os.path.isfile(PIPELINE), "missing /app/camera/pipeline.py"
+        pred, _ = run_pipeline(name)
+        truth = np.asarray(Image.open(os.path.join(HIDDEN, f"{name}.out.png")).convert("RGB"))
+        assert pred.shape == truth.shape, f"{name}: output is {pred.shape}, the camera's image is {truth.shape}"
+        d = np.abs(pred.astype(int) - truth.astype(int)).max(-1)[BORDER:-BORDER, BORDER:-BORDER]
+        w2, w8 = float(np.mean(d <= 2)), float(np.mean(d <= 8))
+        print(f"{name}: {w2:.3%} within 2, {w8:.3%} within 8")
+>       assert w2 >= WITHIN_2 and w8 >= WITHIN_8, (
+            f"{name}: {w2:.3%} of pixels within 2 levels (need {WITHIN_2:.1%}), "
+            f"{w8:.3%} within 8 levels (need {WITHIN_8:.1%})"
+        )
+E       AssertionError: h4_texture: 85.306% of pixels within 2 levels (need 95.0%), 96.893% within 8 levels (need 99.5%)
+E       assert (0.8530588699954268 >= 0.95)
+
+tests/test_outputs.py:100: AssertionError
+----------------------------- Captured stdout call -----------------------------
+h4_texture: 85.306% within 2, 96.893% within 8
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_outputs.py::test_pipeline_exists
+PASSED tests/test_outputs.py::test_hidden_photo_set_is_complete
+FAILED tests/test_outputs.py::test_hidden_photo_matches_camera[h1_hubble] - A...
+FAILED tests/test_outputs.py::test_hidden_photo_matches_camera[h2_saturated]
+FAILED tests/test_outputs.py::test_hidden_photo_matches_camera[h3_motorcycle]
+FAILED tests/test_outputs.py::test_hidden_photo_matches_camera[h4_texture] - ...
+========================= 4 failed, 2 passed in 2.93s ==========================

@@ -1,0 +1,3 @@
+Checking tasks/camera-pipeline-reconstruction/task.toml...
+PASS tasks/camera-pipeline-reconstruction
+All task.toml files have the expected [task] name

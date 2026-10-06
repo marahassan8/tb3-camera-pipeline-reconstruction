@@ -1,0 +1,10 @@
+{
+ "cfa": "RGGB",
+ "black_level": 512,
+ "white_level": 16383,
+ "as_shot_wb": [
+  2.0,
+  1.0,
+  1.55
+ ]
+}

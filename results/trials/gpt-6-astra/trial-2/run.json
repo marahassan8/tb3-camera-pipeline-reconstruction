@@ -1,0 +1,33 @@
+{
+  "trial": 2,
+  "agent": "Codex CLI via Harbor 0.23.1 (agent 'codex', standard Harbor agent)",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh (recorded in the Codex session log as model_reasoning_effort=xhigh on every turn)",
+  "auth": "ChatGPT Plus login (CODEX_FORCE_AUTH_JSON); the three parallel runs shared one plan allowance and then used pooled paid credits",
+  "harbor_trial": "camera-pipeline-reconstruction__ngZADgu",
+  "agent_started_at": "2026-10-05T19:57:42.124000Z",
+  "agent_finished_at": "2026-10-05T22:47:16.902000Z",
+  "duration_sec": 10174.8,
+  "agent_timeout_sec": 10800,
+  "hit_timeout": false,
+  "interrupted": false,
+  "exception": null,
+  "commands_run": 247,
+  "tokens": {"input": 20912684, "cached_input": 20150272, "output": 251904},
+  "cost": {
+    "harbor_estimate_usd": 39.84,
+    "chatgpt_credits_used": 258.17,
+    "note": "258.17-credit share of 750.00 credits used across the three parallel runs; the shared plan allowance is counted once overall"
+  },
+  "submission_sha256": {
+    "pipeline.py": "ed82697ee3a9387b76d38c907ea0d53de5b1029d161fbcb6bb8d6fd196d581dd",
+    "profile.npz": "5f9825ab4b5999efd9c43f0adfaa0ed36416d5f26b3b919a3c181904713ecc17"
+  },
+  "verifier": {
+    "reward": 0,
+    "hidden_within_2_pct": {"h2_saturated": 44.767, "h3_motorcycle": 90.005, "h4_texture": 88.834, "h1_hubble": 96.627},
+    "hidden_within_8_pct": {"h2_saturated": 60.327, "h3_motorcycle": 95.838, "h4_texture": 97.6, "h1_hubble": 99.662}
+  },
+  "train_within_2_pct": {"t1_skin": 98.742, "t2_astronaut": 96.85, "t3_coffee": 98.26, "t4_chart": 99.418},
+  "train_within_8_pct": {"t1_skin": 99.9, "t2_astronaut": 99.661, "t3_coffee": 99.911, "t4_chart": 99.933}
+}

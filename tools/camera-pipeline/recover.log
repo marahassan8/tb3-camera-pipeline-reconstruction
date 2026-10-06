@@ -1,0 +1,28 @@
+screen bilinear gaussian r= 4  train MSE  155.765  (   18s)
+screen bilinear gaussian r= 8  train MSE  163.199  (   37s)
+screen bilinear gaussian r=16  train MSE  161.621  (   61s)
+screen bilinear guided   r= 4  train MSE  162.914  (   85s)
+screen bilinear guided   r= 8  train MSE  164.265  (  127s)
+screen bilinear guided   r=16  train MSE  163.300  (  248s)
+screen malvar   gaussian r= 4  train MSE    3.230  (  263s)
+screen malvar   gaussian r= 8  train MSE    7.475  (  279s)
+screen malvar   gaussian r=16  train MSE   11.749  (  299s)
+screen malvar   guided   r= 4  train MSE    0.177  (  318s)
+screen malvar   guided   r= 8  train MSE    0.144  (  355s)
+screen malvar   guided   r=16  train MSE    0.184  (  457s)
+refine malvar guided r= 6  train MSE   0.1407  (  603s)
+refine malvar guided r= 7  train MSE   0.1354  (  748s)
+refine malvar guided r= 8  train MSE   0.1337  (  893s)
+refine malvar guided r= 9  train MSE   0.1348  ( 1069s)
+refine malvar guided r=10  train MSE   0.1376  ( 1301s)
+chosen: malvar demosaic, guided LTM r=8, train MSE 0.1337
+tweak [1.0298 0.9601] hl 0.7997 eps 0.0394 compress 0.6998 sharp [0.9998, 0.5997, 0.0099]
+ccm [[1.62, -0.48, -0.14], [-0.2, 1.42, -0.22], [0.04, -0.46, 1.42]]
+recovered t1_skin         100.000% 100.000%   64.4dB
+recovered t2_astronaut     99.631% 100.000%   56.4dB
+recovered t3_coffee        99.569% 100.000%   56.0dB
+recovered t4_chart         99.997% 100.000%   63.1dB
+recovered h1_hubble        99.673% 100.000%   53.2dB
+recovered h2_saturated     96.440% 100.000%   52.8dB
+recovered h3_motorcycle    99.996% 100.000%   62.0dB
+recovered h4_texture       99.998% 100.000%   63.1dB

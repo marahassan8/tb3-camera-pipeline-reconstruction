@@ -1,0 +1,14 @@
+step 200 loss 9.56 levels
+step 400 loss 6.51 levels
+step 600 loss 5.60 levels
+step 800 loss 4.54 levels
+step 1000 loss 4.70 levels
+step 1200 loss 5.51 levels
+cnn t1_skin          22.455%  84.069%   32.4dB
+cnn t2_astronaut     21.115%  67.191%   29.4dB
+cnn t3_coffee         8.359%  65.723%   31.0dB
+cnn t4_chart         30.897%  82.003%   30.9dB
+cnn h1_hubble         4.369%  46.965%   28.4dB
+cnn h2_saturated      0.729%  22.065%   16.3dB
+cnn h3_motorcycle    17.942%  64.144%   25.0dB
+cnn h4_texture       13.289%  62.559%   23.6dB

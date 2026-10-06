@@ -1,0 +1,107 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-10-06T00:17:25.718939+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "9.1.1"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 2,
+            "failed": 4,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1791245842790,
+            "stop": 1791245845718
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_pipeline_exists",
+                "status": "passed",
+                "duration": 3,
+                "start": 1791245842871,
+                "stop": 1791245842874,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_hidden_photo_set_is_complete",
+                "status": "passed",
+                "duration": 1,
+                "start": 1791245842874,
+                "stop": 1791245842875,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_hidden_photo_matches_camera",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 624,
+                "start": 1791245842875,
+                "stop": 1791245843499,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "tags": [
+                    "parametrize::name::['h1_hubble', 'h2_saturated', 'h3_motorcycle', 'h4_texture']"
+                ],
+                "trace": "name = 'h1_hubble'\n\n    @pytest.mark.parametrize(\"name\", PHOTOS)\n    def test_hidden_photo_matches_camera(name):\n        \"\"\"On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8.\"\"\"\n        assert os.path.isfile(PIPELINE), \"missing /app/camera/pipeline.py\"\n        pred, _ = run_pipeline(name)\n        truth = np.asarray(Image.open(os.path.join(HIDDEN, f\"{name}.out.png\")).convert(\"RGB\"))\n        assert pred.shape == truth.shape, f\"{name}: output is {pred.shape}, the camera's image is {truth.shape}\"\n        d = np.abs(pred.astype(int) - truth.astype(int)).max(-1)[BORDER:-BORDER, BORDER:-BORDER]\n        w2, w8 = float(np.mean(d <= 2)), float(np.mean(d <= 8))\n        print(f\"{name}: {w2:.3%} within 2, {w8:.3%} within 8\")\n>       assert w2 >= WITHIN_2 and w8 >= WITHIN_8, (\n            f\"{name}: {w2:.3%} of pixels within 2 levels (need {WITHIN_2:.1%}), \"\n            f\"{w8:.3%} within 8 levels (need {WITHIN_8:.1%})\"\n        )\nE       AssertionError: h1_hubble: 93.862% of pixels within 2 levels (need 95.0%), 99.764% within 8 levels (need 99.5%)\nE       assert (0.9386159769823136 >= 0.95)\n\ntests/test_outputs.py:100: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_hidden_photo_matches_camera",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 872,
+                "start": 1791245843499,
+                "stop": 1791245844371,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "tags": [
+                    "parametrize::name::['h1_hubble', 'h2_saturated', 'h3_motorcycle', 'h4_texture']"
+                ],
+                "trace": "name = 'h2_saturated'\n\n    @pytest.mark.parametrize(\"name\", PHOTOS)\n    def test_hidden_photo_matches_camera(name):\n        \"\"\"On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8.\"\"\"\n        assert os.path.isfile(PIPELINE), \"missing /app/camera/pipeline.py\"\n        pred, _ = run_pipeline(name)\n        truth = np.asarray(Image.open(os.path.join(HIDDEN, f\"{name}.out.png\")).convert(\"RGB\"))\n        assert pred.shape == truth.shape, f\"{name}: output is {pred.shape}, the camera's image is {truth.shape}\"\n        d = np.abs(pred.astype(int) - truth.astype(int)).max(-1)[BORDER:-BORDER, BORDER:-BORDER]\n        w2, w8 = float(np.mean(d <= 2)), float(np.mean(d <= 8))\n        print(f\"{name}: {w2:.3%} within 2, {w8:.3%} within 8\")\n>       assert w2 >= WITHIN_2 and w8 >= WITHIN_8, (\n            f\"{name}: {w2:.3%} of pixels within 2 levels (need {WITHIN_2:.1%}), \"\n            f\"{w8:.3%} within 8 levels (need {WITHIN_8:.1%})\"\n        )\nE       AssertionError: h2_saturated: 75.010% of pixels within 2 levels (need 95.0%), 87.830% within 8 levels (need 99.5%)\nE       assert (0.7500973318106312 >= 0.95)\n\ntests/test_outputs.py:100: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_hidden_photo_matches_camera",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 804,
+                "start": 1791245844371,
+                "stop": 1791245845175,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "tags": [
+                    "parametrize::name::['h1_hubble', 'h2_saturated', 'h3_motorcycle', 'h4_texture']"
+                ],
+                "trace": "name = 'h3_motorcycle'\n\n    @pytest.mark.parametrize(\"name\", PHOTOS)\n    def test_hidden_photo_matches_camera(name):\n        \"\"\"On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8.\"\"\"\n        assert os.path.isfile(PIPELINE), \"missing /app/camera/pipeline.py\"\n        pred, _ = run_pipeline(name)\n        truth = np.asarray(Image.open(os.path.join(HIDDEN, f\"{name}.out.png\")).convert(\"RGB\"))\n        assert pred.shape == truth.shape, f\"{name}: output is {pred.shape}, the camera's image is {truth.shape}\"\n        d = np.abs(pred.astype(int) - truth.astype(int)).max(-1)[BORDER:-BORDER, BORDER:-BORDER]\n        w2, w8 = float(np.mean(d <= 2)), float(np.mean(d <= 8))\n        print(f\"{name}: {w2:.3%} within 2, {w8:.3%} within 8\")\n>       assert w2 >= WITHIN_2 and w8 >= WITHIN_8, (\n            f\"{name}: {w2:.3%} of pixels within 2 levels (need {WITHIN_2:.1%}), \"\n            f\"{w8:.3%} within 8 levels (need {WITHIN_8:.1%})\"\n        )\nE       AssertionError: h3_motorcycle: 92.655% of pixels within 2 levels (need 95.0%), 98.918% within 8 levels (need 99.5%)\nE       assert (0.926547636293399 >= 0.95)\n\ntests/test_outputs.py:100: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_hidden_photo_matches_camera",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 543,
+                "start": 1791245845175,
+                "stop": 1791245845718,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "tags": [
+                    "parametrize::name::['h1_hubble', 'h2_saturated', 'h3_motorcycle', 'h4_texture']"
+                ],
+                "trace": "name = 'h4_texture'\n\n    @pytest.mark.parametrize(\"name\", PHOTOS)\n    def test_hidden_photo_matches_camera(name):\n        \"\"\"On each unseen photo, >= 95% of pixels within 2 levels and >= 99.5% within 8.\"\"\"\n        assert os.path.isfile(PIPELINE), \"missing /app/camera/pipeline.py\"\n        pred, _ = run_pipeline(name)\n        truth = np.asarray(Image.open(os.path.join(HIDDEN, f\"{name}.out.png\")).convert(\"RGB\"))\n        assert pred.shape == truth.shape, f\"{name}: output is {pred.shape}, the camera's image is {truth.shape}\"\n        d = np.abs(pred.astype(int) - truth.astype(int)).max(-1)[BORDER:-BORDER, BORDER:-BORDER]\n        w2, w8 = float(np.mean(d <= 2)), float(np.mean(d <= 8))\n        print(f\"{name}: {w2:.3%} within 2, {w8:.3%} within 8\")\n>       assert w2 >= WITHIN_2 and w8 >= WITHIN_8, (\n            f\"{name}: {w2:.3%} of pixels within 2 levels (need {WITHIN_2:.1%}), \"\n            f\"{w8:.3%} within 8 levels (need {WITHIN_8:.1%})\"\n        )\nE       AssertionError: h4_texture: 85.306% of pixels within 2 levels (need 95.0%), 96.893% within 8 levels (need 99.5%)\nE       assert (0.8530588699954268 >= 0.95)\n\ntests/test_outputs.py:100: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}
