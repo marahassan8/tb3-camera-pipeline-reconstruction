@@ -228,7 +228,7 @@ It passed all four (§2, §4.2).
 - **The standard trial matrix is complete for Opus 5.5 and GPT-6 Astra:** three independent Harbor container runs each. Fable 5.1 still has one resumed host probe rather than three Harbor trials. Cheat trials and the rubric review were not run.
 - **Seven completed runs across three models are not evidence that every stronger run must fail.** All seven failed for the same reason, with large gaps on the saturated chart and moderate ones elsewhere (Opus run 3 reached 93.9% on the Hubble photo). A future run could still find the local stage.
 - **Agent timeout.** It is set to 3 h. The Fable probe used 2 h 22 min including the resume; the Opus runs took 126–143 min; the GPT-6 Astra runs took 170–176 min.
-- **The data is synthetic.** The scenes are real photos turned back into RAW (following Brooks et al. 2019, *Unprocessing Images for Learned Raw Denoising*) plus procedural charts, and the camera is a constructed pipeline rather than a real camera's firmware.
+- **The test data is synthetic.** The scenes are real photos turned back into RAW (following Brooks et al. 2019, *Unprocessing Images for Learned Raw Denoising*) plus procedural charts, and the camera is a constructed pipeline rather than a real camera's firmware.
 - **Licences.** The source photos are scikit-image sample images: astronaut, Hubble deep field and skin are public domain; coffee and cat are CC0. The Middlebury stereo motorcycle and scikit-image's colour wheel carry no stated licence, so they should be replaced before any upstream contribution.
 
 ## 7. Repository layout
